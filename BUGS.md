@@ -63,8 +63,27 @@ licenses.ChangeLicensesTeamTests.changeLicensesTeamTest
 test with description :   
 "Move Toolbox Enterprise EAP license (non transferable license?)"   
 
+## Move license between two teams under team admin
+__*Label:*__ to_be_discussed; possible_bug; documentation_update_required     
+__*Description:*__   
+Method ```customer/changeLicensesTeam```.     
+Under team admin that has admin rules in both teams, move license from one team to another.   
+It is passed in CRM, but failed using API method.  
+
+Also in [transfer documentation](https://sales.jetbrains.com/hc/en-gb/articles/208460205-How-to-transfer-licenses-between-teams-) it is mentioned that to transfer a license you must be a company admin,    
+but then in [roles and permissions](https://sales.jetbrains.com/hc/en-gb/articles/207739139-JetBrains-Account-administrator-and-user-roles) team admin is marked as allowed to transfer licenses
+
+__*Steps to reproduce:*__     
+Go to CRM under team admin, open a team, choose product with license, select license, transfer it to another available team.   
+It is not possible to select this license for transfer.   
+
+__*Automated tests to reproduce the problem:*__      
+licenses.ChangeLicensesTeamTests.changeLicensesTeamTest      
+test with description :      
+"Move license from active to another team under team admin who has access to both teams"   
+
 ## Not possible to revoke licenses with API when it is okay in UI
-__*Label:*__ To_be_discussed ; possible_bug
+__*Label:*__ to_be_discussed ; possible_bug
 
 __*Description:*__   
 Method ```customer/licenses/revoke```.   
@@ -94,10 +113,18 @@ __*Steps to reproduce:*__
 __*Environment:*__ macOs, built-in safari email client, google email
 
 ## Automatically saved name of a team in CRM
-__*Label:*__ To_be_discussed;
+__*Label:*__ to_be_discussed; documentation_update_required   
 
 __*Description:*__  
 Currently new name entered in the text field is saved automatically after few sec.  
 This is not documented in [creating a team page](https://sales.jetbrains.com/hc/en-gb/articles/207739219-Creating-a-team) and can be misleading.
 
-From my point of view, this should be either properly described in the user-guide documentation or changed with **Save** button. 
+From my point of view, this should be either properly described in the user-guide documentation or changed with **Save** button.   
+
+## Merge teams under team admin
+__*Label:*__ to_be_discussed; documentation_update_required
+
+__*Description:*__  
+It is mentioned in [merge teams](https://sales.jetbrains.com/hc/en-gb/articles/208460175-How-to-merge-two-teams-) documentation that only company admin is allowed to merge teams.   
+But then in [roles and permissions matrix](https://sales.jetbrains.com/hc/en-gb/articles/207739139-JetBrains-Account-administrator-and-user-roles) team administrator is marked as allowed as well.  
+Documentation is required to be updated.   
