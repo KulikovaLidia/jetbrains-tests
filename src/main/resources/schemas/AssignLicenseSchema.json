@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome7",
+  "definitions": {
+    "Welcome7": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "licenseId": {
+          "type": "string"
+        },
+        "license": {
+          "$ref": "#/definitions/License"
+        },
+        "contact": {
+          "$ref": "#/definitions/Contact"
+        },
+        "sendEmail": {
+          "type": "boolean"
+        },
+        "includeOfflineActivationCode": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "contact",
+        "includeOfflineActivationCode",
+        "license",
+        "licenseId",
+        "sendEmail"
+      ],
+      "title": "Welcome7"
+    },
+    "Contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "firstName",
+        "lastName"
+      ],
+      "title": "Contact"
+    },
+    "License": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "team": {
+          "type": "integer"
+        },
+        "productCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "productCode",
+        "team"
+      ],
+      "title": "License"
+    }
+  }
+}
