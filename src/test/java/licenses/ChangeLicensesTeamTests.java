@@ -84,7 +84,7 @@ public class ChangeLicensesTeamTests {
 
     @ParameterizedTest(name = "{0}")
     @MethodSource("testDataProvider")
-    void changeEmptyLicensesTeamTest(String description, String token, Long teamId, List<String> licenseIds, int code, String responseBody) throws TestException {
+    void changeLicensesTeamTest(String description, String token, Long teamId, List<String> licenseIds, int code, String responseBody) throws TestException {
         given().headers(TOKEN.getHttpHeader(), token, COMPANY.getHttpHeader(), company)
                 .body(createJsonStringFromPojo(createExpectedRequestBody(teamId, licenseIds)))
                 .post(apiUrl + METHOD)
